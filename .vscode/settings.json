@@ -1,0 +1,9 @@
+{
+    "cucumber.glue": [
+        "playwright/tests/cucumber/**/*.ts"
+    ],
+    "debug.allowBreakpointsEverywhere": true,
+    "cucumberTestRunner.env": {
+        
+    }
+}

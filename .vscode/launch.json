@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Cucumber Tests",
+            "program": "${workspaceFolder}/playwright/node_modules/@cucumber/cucumber/bin/cucumber-js",
+            "args": [
+                "--require", "ts-node/register",
+                "--require", "${workspaceFolder}/playwright/tests/cucumber/steps/**/*.ts",
+                "--format", "progress-bar",
+                "--format", "html:cucumber-report.html",
+                "${workspaceFolder}/playwright/tests/cucumber/features/**/*.feature"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "cwd": "${workspaceFolder}/playwright",
+            "env": {
+                "TS_NODE_PROJECT": "${workspaceFolder}/playwright/tsconfig.json",
+                "DEBUG": "cucumber:*"
+            },
+            "sourceMaps": true,
+            "smartStep": true,
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        }
+    ]
+}
